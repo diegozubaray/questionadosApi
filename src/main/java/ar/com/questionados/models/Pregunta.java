@@ -9,7 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.data.annotation.AccessType.Type;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -21,24 +24,25 @@ public class Pregunta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idpreguntas;
+	
 	private String enunciado;
 	
-	@JsonBackReference
-    @ManyToOne
-    @JoinColumn(name="idcategorias", nullable=false)
+	
+    //@ManyToOne()
+    //@JoinColumn(name="idcategorias", nullable=false)
 	private Long idcategoria;
 	
-	@JsonManagedReference
-	@OneToMany(mappedBy ="idPreguntas")
-	private Set<Respuesta> respuestas;
+	//@JsonManagedReference
+	//@OneToMany(mappedBy ="preguntas")
+	//private Set<Respuesta> respuestas;
 	
 
-	public Set<Respuesta> getRespuestas() {
-		return respuestas;
-	}
-	public void setRespuestas(Set<Respuesta> respuestas) {
-		this.respuestas = respuestas;
-	}
+	//public Set<Respuesta> getRespuestas() {
+		//return respuestas;
+	//}
+	//public void setRespuestas(Set<Respuesta> respuestas) {
+		//this.respuestas = respuestas;
+	//}
 	public String getEnunciado() {
 		return enunciado;
 	}

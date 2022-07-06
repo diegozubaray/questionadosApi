@@ -12,9 +12,9 @@ import ar.com.questionados.models.Pregunta;
 @Repository
 public interface PreguntaRepository extends JpaRepository<Pregunta, Long> {
 
-	@Query("SELECT p FROM Pregunta p WHERE p.categoria.id = :idcategorias")
+	/*@Query("SELECT p FROM Pregunta p WHERE p.categoria.id = :idcategorias")
 	List<Pregunta> getCategoriaById(
 			 @Param("idcategorias") Long categoriaId
-			);
+			);*/
 	
 }

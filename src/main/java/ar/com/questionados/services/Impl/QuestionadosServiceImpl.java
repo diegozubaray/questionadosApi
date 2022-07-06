@@ -1,4 +1,4 @@
-package ar.com.questionados.services.Impl;
+/*package ar.com.questionados.services.Impl;
 
 
 import java.util.HashSet;
@@ -39,6 +39,7 @@ public class QuestionadosServiceImpl implements QuestionadosService  {
 		}
 		preguntaObtenida.setRespuestas(respuestas);
 		return preguntaObtenida;
+		return null;
 	}
 
 
@@ -52,4 +53,4 @@ public class QuestionadosServiceImpl implements QuestionadosService  {
 		}
 	}
 
-}
+}*/

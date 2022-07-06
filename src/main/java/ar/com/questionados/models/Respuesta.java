@@ -21,10 +21,9 @@ public class Respuesta {
 	private boolean esCorrecta;
 	
 	private String texto;
-	
-	@JsonBackReference
-    @ManyToOne
-    @JoinColumn(name="idPreguntas", nullable=false)
+
+    //@ManyToOne
+    //@JoinColumn(name="idpreguntas")
     private Pregunta pregunta;
 	
 	
