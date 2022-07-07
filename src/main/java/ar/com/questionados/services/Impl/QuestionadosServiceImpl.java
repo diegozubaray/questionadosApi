@@ -22,11 +22,12 @@ public class QuestionadosServiceImpl implements QuestionadosService  {
 	RespuestaRepository respuestaRepo;
 
 	@Override
-	public Pregunta getPreguntaByCategoriaId(Long id) {
+	public Pregunta getPreguntaRandom(Long id) {
+		
 		List<Pregunta> listaPreguntas = preguntaRepo.getCategoriaById(id);
 		int cantidadPreguntas = listaPreguntas.size();
 		Random rand = new Random();
-		Pregunta preguntaRandom = listaPreguntas.get(rand.nextInt(0));
+		Pregunta preguntaRandom = listaPreguntas.get(rand.nextInt(cantidadPreguntas));
 		Pregunta preguntaObtenida = new Pregunta();
 		preguntaObtenida.setEnunciado(preguntaRandom.getEnunciado());
 		preguntaObtenida.setIdcategoria(preguntaRandom.getIdcategoria());
@@ -39,18 +40,13 @@ public class QuestionadosServiceImpl implements QuestionadosService  {
 		}
 		preguntaObtenida.setRespuestas(respuestas);
 		return preguntaObtenida;
-		return null;
 	}
 
 
 	@Override
-	public Boolean validarRespuesta(Respuesta respuestaUsuarioDTO) {
-		Respuesta respuestaUsuario = respuestaRepo.findById(respuestaUsuarioDTO.getIdRespuesta()).get();
-		if (respuestaUsuario.isEsCorrecta()) {
-			return true;
-		} else {
-			return false;
-		}
+	public Boolean verificarRespuesta(Respuesta respuesta) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }*/

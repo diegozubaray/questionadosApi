@@ -2,7 +2,9 @@ package ar.com.questionados.models;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,23 +28,30 @@ public class Pregunta {
 	private Long idpreguntas;
 	
 	private String enunciado;
+
+	private int idcategoria;
+	 
+    //@ManyToOne
+   // @JoinColumn(name="idcategoria", referencedColumnName = "idcategorias")
+   //private Categoria categoria;
 	
 	
-    //@ManyToOne()
-    //@JoinColumn(name="idcategorias", nullable=false)
-	private Long idcategoria;
-	
-	//@JsonManagedReference
-	//@OneToMany(mappedBy ="preguntas")
-	//private Set<Respuesta> respuestas;
+	/*@OneToMany(mappedBy ="pregunta",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Set<Respuesta> respuestas;*/
 	
 
-	//public Set<Respuesta> getRespuestas() {
-		//return respuestas;
-	//}
-	//public void setRespuestas(Set<Respuesta> respuestas) {
-		//this.respuestas = respuestas;
-	//}
+	
+	
+	
+	
+	
+
+	/*public Set<Respuesta> getRespuestas() {
+		return respuestas;
+	}
+	public void setRespuestas(Set<Respuesta> respuestas) {
+		this.respuestas = respuestas;
+	}*/
 	public String getEnunciado() {
 		return enunciado;
 	}
@@ -55,12 +64,14 @@ public class Pregunta {
 	public void setIdpreguntas(Long idpreguntas) {
 		this.idpreguntas = idpreguntas;
 	}
-	public Long getIdcategoria() {
+	public int getIdcategoria() {
 		return idcategoria;
 	}
-	public void setIdcategoria(Long idcategoria) {
+	public void setIdcategoria(int idcategoria) {
 		this.idcategoria = idcategoria;
 	}
+	
+	
 
 	
 

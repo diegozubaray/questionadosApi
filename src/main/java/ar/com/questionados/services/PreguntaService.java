@@ -11,5 +11,7 @@ public interface PreguntaService{
 	public void insertar(Pregunta pregunta);
 	
 	Pregunta obtenerPorId(Long id);
+	
+
 
 }
