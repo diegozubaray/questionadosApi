@@ -1,7 +1,0 @@
-package ar.com.questionados.services;
-
-import ar.com.questionados.repository.RespuestaRepository;
-
-public interface RespuestaService extends RespuestaRepository{
-
-}

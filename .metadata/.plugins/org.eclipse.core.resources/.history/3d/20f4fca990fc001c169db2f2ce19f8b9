@@ -1,5 +1,0 @@
-package ar.com.questionados.repository;
-
-public interface CategoriaRepository {
-
-}
